@@ -1,0 +1,365 @@
+/* =========================================
+   1. PENGATURAN WARNA & VARIABEL (Dark Mode)
+   ========================================= */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --primary-color: #007bff;
+    --secondary-color: #ffffff;
+    --nav-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --primary-color: #4a90e2;
+    --secondary-color: #16213e;
+    --nav-bg: #0f3460;
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   2. RESET DASAR
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   3. PENGATURAN UTAMA & SMOOTH SCROLLING
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Supaya judul tidak tertutup navbar */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================================
+   4. NAVBAR (Menu Atas)
+   ========================================= */
+header {
+    background-color: var(--nav-bg);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-toggle {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* =========================================
+   5. LAYOUT UTAMA & JUDUL
+   ========================================= */
+main {
+    margin-top: 80px; /* Jarak dari navbar fixed */
+}
+
+.section {
+    padding: 4rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    display: block;
+    padding-bottom: 0.5rem;
+}
+
+/* =========================================
+   6. BAGIAN HOME (FOTO & TEKS)
+   ========================================= */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+    object-position: center 50%; /* Menyesuaikan posisi wajah di foto */
+}
+
+/* =========================================
+   7. TABEL PENDIDIKAN (SUDAH PAKAI GARIS)
+   ========================================= */
+.table-pendidikan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.table-pendidikan th, .table-pendidikan td {
+    padding: 1rem;
+    border: 1px solid #ddd; /* Garis tabel */
+    text-align: left;
+}
+
+.table-pendidikan th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* =========================================
+   8. BAGIAN SKILL & PROGRESS BAR
+   ========================================= */
+.skills-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.skills-list {
+    flex: 1;
+    list-style-position: inside;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-top: 0.2rem;
+}
+
+.skills-list li {
+    padding: 0.4rem;
+    border-bottom: 1px dashed #ccc;
+}
+
+.progress-bars {
+    flex: 2;
+    min-width: 300px;
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+
+.progress {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-done {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+/* =========================================
+   9. BAGIAN PROJECT
+   ========================================= */
+.project-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Efek naik saat di-hover */
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* =========================================
+   10. BAGIAN FORM KONTAK
+   ========================================= */
+.contact-form {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.data-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+    display: none;
+}
+
+/* =========================================
+   11. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    margin-top: 2rem;
+}
+
+/* =========================================
+   12. RESPONSIVE DESIGN (Tampilan di HP)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR (Menu) -->
+    <header>
+        <nav class='navbar'>
+            <div class="logo">My Portofolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        <!-- DARK MODE -->
+        <button id="theme-toggle" class="btn-toggle">Dark Mode</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- BAGIAN HOME -->
+        <section id="home" class="section">
+            <div class="hero-content">
+                <!-- Memanggil foto dari folder asset -->
+                <img src="asset/foto-profil.jpg" alt="Foto Profil" class="profile-pic">
+
+                <div class="hero-text">
+                  <h1>Rizki Ramadani</h1>
+                  <p><strong>NIM:</strong> 40425080</p>
+                  <p><strong>Program Studi:</strong> Bisnis Digital</p>
+                  <p><strong>Kelas:</strong> C</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang -->
+        <section id="about" class="section">
+            <h2>Tentang Saya</h2>
+            <p class="deskripsi">Halo Guys! Saya adalah mahasiswa Program Studi Bisnis Digital di UIN K.H. Abdurrahman Wahid Pekalongan, yang memiliki minat dalam coding dan bisnis online. Saya senang mempelajari hal-hal baru, terutama yang berkaitan dengan teknologi dan bagaimana teknologi dapat memajukan bisnis di era digital ini.</p>
+            <h3>Riwayat Pendidikan</h3>
+            <table class="table-pendidikan">
+                <thead>
+                    <tr>
+                        <th>Tahun</th>
+                        <th>Institusi</th>
+                        <th>Jurusan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022 - 2025</td>
+                        <td>MAS Arrahmaniyah Depok</td>
+                        <td>Ilmu-Ilmu Keagamaan</td>
+                    </tr>
+                    <tr>
+                        <td>2025 - Sekarang</td>
+                        <td>UIN K.H. Abdurrahman Wahid Pekalongan</td>
+                        <td>Bisnis Digital</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SKILL -->
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <ul class="skills-list">
+                    <li>Bernyanyi</li>
+                    <li>Editing Video</li>
+                    <li>Editing Foto</li>
+                    <li>Desain Grafis</li>
+                </ul>
+
+                <!-- PROGRESS BAR -->
+                <div class="progress-bars">
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>Bernyanyi</span><span>75%</span></div>
+                        <div class="progress"><div class="progress-done" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>Editing Video</span><span>85%</span></div>
+                        <div class="progress"><div class="progress-done" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>Editing Foto</span><span>80%</span></div>
+                        <div class="progress"><div class="progress-done" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span>Desain Grafis</span><span>90%</span></div>
+                        <div class="progress"><div class="progress-done" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT -->
+        <section id="project" class="section">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <img src="asset/Website.jpg" alt="project 1">
+                    <h3>Website Toko Online Sederhana</h3>
+                    <p>Membuat UI website e-commerce menggunakan HTML dan CSS dengan layout dan gerakan yang responsive.</p>
+                    <a href="#" class="btn-link">Lihat Detail</a>
+                </article>
+                <article class="project-card">
+                    <img src="asset/Aplikasi.jpg" alt="project 2">
+                    <h3>Aplikasi E-Commerce Mobile</h3>
+                    <p>Mengembangkan aplikasi E-Commerce mobile menggunakan fitur dasar penjualan, keranjang belanja, dan pembayaran.</p>
+                    <a href="#" class="btn-link">Lihat Detail</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- KONTAK FORM -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form id="contactform" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" placeholder="Masukkan Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Masukkan Email Anda">
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Pesan:</label>
+                    <textarea id="pesan" rows="4" placeholder="Masukkan Pesan Anda"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+
+            <!-- PESAN BERHASIL & MENAMPILKAN DATA -->
+            <div id="form-message" class="form-message"></div>
+            <div id="data-container" class="data-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rizki Ramadani. All rights reserved.</p>
+    </footer>
+
+    <!-- MENGHUBUNGKAN FILE JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
